@@ -41,15 +41,6 @@ object PlanckxStudio {
 
     /**
      * 获取该玩家的所有NFT
-     * tokenId
-     * gameId
-     * authorAddress
-     * ownerAddress
-     * nftType
-     * nftName
-     * nftDescription
-     * nftContent
-     * nftData
      *
      * @param playerId String
      * @param callback HttpCallback
