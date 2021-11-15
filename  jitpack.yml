@@ -1,6 +1,7 @@
 jdk:
   - openjdk11
 
+before_install:
+  - chmod +x gradlew
 install:
-  - ./gradlew :sdk:build :sdk:publishToMavenLocal
-  - find . -name "*.aar"
+  - ./gradlew build :{sdk}:publishToMavenLocal
