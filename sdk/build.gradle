@@ -4,8 +4,6 @@ plugins {
     id 'maven-publish'
 }
 
-group ='com.github.PlanckX'
-
 afterEvaluate {
     publishing {
         publications {
