@@ -1,11 +1,13 @@
 # PlanckXSDK-Android
+---
+[![](https://jitpack.io/v/PlanckX/PlanckXSDK-Android.svg)](https://jitpack.io/#PlanckX/PlanckXSDK-Android)
 
-Welcome to the PlanckX Studio SDK！
+### Welcome to the PlanckX Studio SDK！
 
 The PlanckX Studio SDK  contains  the basic SDK tools. You can embed the SDK into your game creation to support the mint and issuance of NFT (Non-fungible-token) assets in your game creation, Match the PlanckX platform account with your game account, And link the NFT assets holder（Usually the player who bought the NFT） by the asset owner to the game for use.
 
-[![](https://jitpack.io/v/PlanckX/PlanckXSDK-Android.svg)](https://jitpack.io/#PlanckX/PlanckXSDK-Android)
-## Import
+
+### Gradle Setup
 ````groovy
 allprojects {
 	repositories {
@@ -17,13 +19,15 @@ allprojects {
 ````groovy
 dependencies {
 	...
-	implementation 'com.github.PlanckX:PlanckXSDK-Android:Tag'
+	implementation 'com.github.PlanckX:PlanckXSDK-Android:1.0.0'
 }
 ````
-## 用法
+### Usage
+
 ````
    先调用初始化方法，再调用其他接口
 ````
+### Interface
 -  初始化
 ````java
     /**
