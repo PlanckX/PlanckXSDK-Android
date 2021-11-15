@@ -8,5 +8,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "PlanckxStudioSdk"
-include ':app'
 include ':sdk'
