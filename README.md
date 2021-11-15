@@ -8,7 +8,7 @@ The PlanckX Studio SDK  contains  the basic SDK tools. You can embed the SDK int
 
 The PlanckX Studio SDK  包括了基本的SDK工具，您可以将SDK嵌入您的游戏创作中，从而支持在您的游戏创作中铸造和发行NFT（Non-fungible-token）资产，关联PlanckX平台账户和您的游戏账户，并将资产所有者（通常是购买了NFT的玩家）持有的NFT资产关联到游戏中使用。
 
-##导入
+## 导入
 ````groovy
 allprojects {
 	repositories {
@@ -24,7 +24,9 @@ dependencies {
 }
 ````
 ## 用法
-
+````
+   先调用初始化方法，再调用其他接口
+````
 -  初始化
 ````java
     /**
