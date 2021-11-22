@@ -1,10 +1,5 @@
 package com.planckxstudio.sdk
 
-/**
- *
- * Description:
- * Author: ricky
- */
 object Constants {
     var apiKey: String? = null
     var secretKey: String? = null

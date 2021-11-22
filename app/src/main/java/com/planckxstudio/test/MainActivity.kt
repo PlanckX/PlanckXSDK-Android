@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.btn_players_nft).setOnClickListener {
-            showDialog ("123456"){ edit ->
+            showDialog("123456") { edit ->
                 PlanckxStudio.searchPlayersNft(edit, object : HttpCallback {
                     override fun success(str: String) {
                         Log.e(TAG, str)
@@ -81,16 +81,16 @@ class MainActivity : AppCompatActivity() {
 
     private fun showDialog(text: String? = null, callback: (String) -> Unit) {
         val builder = AlertDialog.Builder(this)
-        builder.setTitle("请输入")
+        builder.setTitle("Input")
         val edit = EditText(this)
         edit.setText(text)
         builder.setView(edit)
-        builder.setPositiveButton("确认") { p0, _ ->
+        builder.setPositiveButton("Confirm") { p0, _ ->
             p0.dismiss()
             callback.invoke(edit.editableText.toString())
         }
         builder.setNegativeButton(
-            "取消"
+            "Cancel"
         ) { p0, _ -> p0.dismiss() }
         builder.show()
     }

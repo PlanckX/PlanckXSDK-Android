@@ -1,20 +1,15 @@
 package com.planckxstudio.sdk
 
-import android.util.Log
 import com.planckxstudio.sdk.http.HttpCallback
 import com.planckxstudio.sdk.http.HttpRequest
 
-/**
- *
- * Description: API
- * Author: ricky
- */
+
 object PlanckxStudio {
 
     /**
-     * 初始化
-     * @param apiKey String API访问密钥
-     * @param secretKey String 签名认证加密所使⽤的密钥
+     * init
+     * @param apiKey String API key
+     * @param secretKey String Signature Key used for authentication and encryption
      */
     fun init(apiKey: String, secretKey: String) {
         Constants.apiKey = apiKey
@@ -22,14 +17,9 @@ object PlanckxStudio {
     }
 
     /**
-     * 判断该玩家是否绑定
+     * @param playerId String Player ID
+     * @param callback HttpCallback  If the binding is successful: isBind is true, if not: isBind is false, use WebView to open openUrl for binding.
      *
-     * 已绑定返回：{"code":"200","success":true,"msg":"success","desc":null,"data":{"isBind":true,"openUrl":null}}
-     *
-     * 未绑定返回：{"code":"200","success":true,"msg":"success","desc":null,"data":{"isBind":false,"openUrl":"http://xxx"}}
-     * 获取到openUrl，使用webview打开，进行授权绑定操作
-     *
-     * @param playerId String
      */
     fun judgeBindStatus(playerId: String, callback: HttpCallback) {
         HttpRequest.doGet(
@@ -40,9 +30,9 @@ object PlanckxStudio {
     }
 
     /**
-     * 获取该玩家的所有NFT
+     * Get all of the player's NFT
      *
-     * @param playerId String
+     * @param playerId String Player ID
      * @param callback HttpCallback
      */
     fun searchPlayersNft(playerId: String, callback: HttpCallback) {
@@ -54,7 +44,7 @@ object PlanckxStudio {
     }
 
     /**
-     * 获取游戏内所有的NFT
+     * Get all NFT's in the game
      * tokenId
      * gameId
      * authorAddress
@@ -75,7 +65,7 @@ object PlanckxStudio {
     }
 
     /**
-     * TokenId查询NFT资产
+     * Query NFT assets by TokenId
      * tokenId
      * gameId
      * authorAddress

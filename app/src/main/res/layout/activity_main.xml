@@ -11,25 +11,25 @@
         android:id="@+id/btn_judgeBindStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="判断绑定状态" />
+        android:text="Determine binding status" />
 
     <Button
         android:id="@+id/btn_players_nft"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="玩家账号查询NFT资产" />
+        android:text="Query a player's NFT" />
 
     <Button
         android:id="@+id/btn_games_nft"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="查询NFT资产" />
+        android:text="Get all NFT in the game" />
 
     <Button
         android:id="@+id/btn_token_nft"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="查询NFT资产" />
+        android:text="Query NFT assets by TokenId" />
 
 
 </LinearLayout>

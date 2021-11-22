@@ -14,11 +14,6 @@ import javax.crypto.spec.SecretKeySpec
 import android.util.Base64
 import android.util.Log
 
-/**
- *
- * Description:
- * Author: ricky
- */
 object HttpRequest {
     private const val GET = "GET"
     private const val POST = "POST"
@@ -77,14 +72,13 @@ object HttpRequest {
             ArrayList<Map.Entry<String, String>>(header.entries)
         headerIds = headerIds.sortedBy { it.key }
         val builder = StringBuffer()
-        for ((index, item) in headerIds.withIndex()) {
+        for (item in headerIds) {
             builder.append(item.key).append("=").append(item.value).append("&")
         }
         Constants.secretKey?.let {
             val sign = createSign(builder.toString(), it)
             header["sign"] = sign
         }
-        Constants.secretKey?.let { header["secret_key"] = it }
         return header
     }
 
@@ -148,7 +142,6 @@ object HttpRequest {
                     }
                 }
             }
-
             val url = URL(urlBuilder.toString())
             httpConn = url.openConnection() as HttpURLConnection
             httpConn.requestMethod = requestMethod
