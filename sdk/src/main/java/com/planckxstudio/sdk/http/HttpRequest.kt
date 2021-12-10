@@ -163,7 +163,6 @@ object HttpRequest {
                 val wr = DataOutputStream(httpConn.outputStream)
                 wr.writeBytes(jsonObject.toString())
             }
-
             val inputStream = httpConn.inputStream
             isReader = InputStreamReader(inputStream)
             bufReader = BufferedReader(isReader)
@@ -172,7 +171,6 @@ object HttpRequest {
                 readTextBuf.append(line)
                 line = bufReader.readLine()
             }
-
             return readTextBuf.toString()
         } catch (ex: Exception) {
             throw PlanckxstudioException(ex)

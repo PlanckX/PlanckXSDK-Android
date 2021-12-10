@@ -11,25 +11,34 @@
         android:id="@+id/btn_judgeBindStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Determine binding status" />
+        android:text="Determine binding status"
+        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/btn_players_nft"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Query a player's NFT" />
+        android:text="Query a player's NFT"
+        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/btn_games_nft"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Get all NFT in the game" />
+        android:text="Get all NFT in the game"
+        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/btn_token_nft"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Query NFT assets by TokenId" />
+        android:text="Query NFT assets by TokenId"
+        android:textAllCaps="false" />
 
+    <TextView
+        android:id="@+id/tv_msg"
+        android:layout_width="match_parent"
+        android:layout_marginVertical="10dp"
+        android:layout_height="match_parent" />
 
 </LinearLayout>

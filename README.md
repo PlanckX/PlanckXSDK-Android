@@ -1,5 +1,5 @@
 # PlanckXSDK-Android
----
+
 [![](https://jitpack.io/v/PlanckX/PlanckXSDK-Android.svg)](https://jitpack.io/#PlanckX/PlanckXSDK-Android)
 
 ### Welcome to the PlanckX Studio SDK！
@@ -26,7 +26,7 @@ dependencies {
 ### Usage
 
 ````
-   Call the initialization method first and then the others.
+   Call the init method first and then the others.
 ````
 ### Interface
 -  Init
@@ -36,6 +36,7 @@ dependencies {
      * @param secretKey String String Signature Key used for authentication and encryption.     */
     fun init(apiKey: String, secretKey: String)
 ````
+
 - Determine the player's binding state
 ````java
   /**

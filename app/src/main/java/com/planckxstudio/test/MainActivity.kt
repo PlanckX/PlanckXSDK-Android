@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.planckxstudio.sdk.PlanckxStudio
 import com.planckxstudio.sdk.http.HttpCallback
@@ -16,17 +18,18 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val tvMsg = findViewById<TextView>(R.id.tv_msg)
         findViewById<Button>(R.id.btn_judgeBindStatus).setOnClickListener {
             showDialog("123456") { edit ->
                 PlanckxStudio.judgeBindStatus(edit, object : HttpCallback {
                     override fun success(str: String) {
                         Log.e(TAG, str)
+                        tvMsg.text = str
                     }
 
                     override fun error(e: Throwable) {
-                        e.message?.let { Log.e(TAG, it) } ?: let {
-                            Log.e(TAG, e.javaClass.name)
-                        }
+                        errorLog(e)
+                        makeToast(e)
                     }
                 })
             }
@@ -37,12 +40,12 @@ class MainActivity : AppCompatActivity() {
                 PlanckxStudio.searchPlayersNft(edit, object : HttpCallback {
                     override fun success(str: String) {
                         Log.e(TAG, str)
+                        tvMsg.text = str
                     }
 
                     override fun error(e: Throwable) {
-                        e.message?.let { Log.e(TAG, it) } ?: let {
-                            Log.e(TAG, e.javaClass.name)
-                        }
+                        errorLog(e)
+                        makeToast(e)
                     }
                 })
             }
@@ -52,12 +55,12 @@ class MainActivity : AppCompatActivity() {
             PlanckxStudio.searchGamesNft(object : HttpCallback {
                 override fun success(str: String) {
                     Log.e(TAG, str)
+                    tvMsg.text = str
                 }
 
                 override fun error(e: Throwable) {
-                    e.message?.let { Log.e(TAG, it) } ?: let {
-                        Log.e(TAG, e.javaClass.name)
-                    }
+                    errorLog(e)
+                    makeToast(e)
                 }
             })
         }
@@ -67,12 +70,12 @@ class MainActivity : AppCompatActivity() {
                 PlanckxStudio.searchTokenNft(edit, object : HttpCallback {
                     override fun success(str: String) {
                         Log.e(TAG, str)
+                        tvMsg.text = str
                     }
 
                     override fun error(e: Throwable) {
-                        e.message?.let { Log.e(TAG, it) } ?: let {
-                            Log.e(TAG, e.javaClass.name)
-                        }
+                        errorLog(e)
+                        makeToast(e)
                     }
                 })
             }
@@ -93,5 +96,19 @@ class MainActivity : AppCompatActivity() {
             "Cancel"
         ) { p0, _ -> p0.dismiss() }
         builder.show()
+    }
+
+    fun errorLog(e: Throwable) {
+        e.message?.let { Log.e(TAG, it) } ?: let {
+            Log.e(TAG, e.javaClass.name)
+        }
+    }
+
+    fun makeToast(e: Throwable) {
+        makeToast(e.message ?: let { e.javaClass.name })
+    }
+
+    fun makeToast(msg: String) {
+        Toast.makeText(this@MainActivity, msg, Toast.LENGTH_LONG).show()
     }
 }
