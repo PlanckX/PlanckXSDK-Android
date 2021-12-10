@@ -5,6 +5,6 @@ import com.planckxstudio.sdk.PlanckxStudio
 
 class MainApp : Application() {
     init {
-        PlanckxStudio.init("JISQ97ih", "3e04178595c34ee6131f10a81bbdb99fbb421e8b")
+        PlanckxStudio.init("ptDoWYvN", "c07b338cb51a81e14f6db2e1a3a2b9a1c7570e68")
     }
 }
