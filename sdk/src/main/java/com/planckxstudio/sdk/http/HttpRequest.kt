@@ -12,7 +12,7 @@ import javax.crypto.Mac
 import javax.crypto.SecretKey
 import javax.crypto.spec.SecretKeySpec
 import android.util.Base64
-import android.util.Log
+
 
 object HttpRequest {
     private const val GET = "GET"
@@ -72,8 +72,12 @@ object HttpRequest {
             ArrayList<Map.Entry<String, String>>(header.entries)
         headerIds = headerIds.sortedBy { it.key }
         val builder = StringBuffer()
-        for (item in headerIds) {
-            builder.append(item.key).append("=").append(item.value).append("&")
+        for ((index, item) in headerIds.withIndex()) {
+            builder.append(item.key).append("=").append(item.value)
+            if (index < headerIds.size - 1) {
+                builder.append("&")
+
+            }
         }
         Constants.secretKey?.let {
             val sign = createSign(builder.toString(), it)
